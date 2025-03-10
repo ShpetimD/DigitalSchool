@@ -1,4 +1,5 @@
 This script will install the following applications
+
 Google Chrome
 Git
 Notepad++

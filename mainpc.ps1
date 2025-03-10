@@ -4,7 +4,6 @@ Write-Host $line
 Write-Host "# This script will install the following applications:" -ForegroundColor Cyan
 Write-Host $line
 
-# Define application list
 $apps = @(
     "Google Chrome",
     "Git",
@@ -24,7 +23,6 @@ $apps = @(
     "WordPress"
 )
 
-# Display the list with better formatting
 foreach ($app in $apps) {
     Write-Host ("- " + $app) -ForegroundColor Green
 }
@@ -34,10 +32,9 @@ Write-Host "# If you have any issues, please contact support: support@digitalsch
 Write-Host $line
 Write-Host "Press (Y) to continue, or (C) to cancel." -ForegroundColor Magenta
 
-# Get user input and proceed only if Y is pressed
+
 $choice = Read-Host
 if ($choice -eq "Y" -or $choice -eq "y") {
-    # Ensure Chocolatey is installed
     if (-not (Test-Path "$env:ProgramData\chocolatey")) {
         Write-Host "Chocolatey is not installed. Installing..."
         Set-ExecutionPolicy Bypass -Scope Process -Force
@@ -45,7 +42,6 @@ if ($choice -eq "Y" -or $choice -eq "y") {
         Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
     }
 
-    # Install packages
     $packages = @(
         "googlechrome",
         "notepadplusplus.install",
@@ -73,7 +69,7 @@ if ($choice -eq "Y" -or $choice -eq "y") {
     
     Write-Host "Installing Octoparse..."
     try {
-	$octoparseUrl = "https://download.octoparse.bazhuayu.com/client/en-US/win/Octoparse%20Setup%208.7.2.exe"  # Update URL if needed
+	$octoparseUrl = "https://download.octoparse.bazhuayu.com/client/en-US/win/Octoparse%20Setup%208.7.2.exe"  # Update URL when new version releses
         $output = "C:\temp\octoparse_setup.exe"
         if (-not (Test-Path "C:\temp")) {
             New-Item -ItemType Directory -Path "C:\temp" | Out-Null
@@ -89,35 +85,29 @@ if ($choice -eq "Y" -or $choice -eq "y") {
     }
 
  
-    # Step 4: Download and extract WordPress
-    Write-Host "Downloading and setting up WordPress..."
+       Write-Host "Downloading and setting up WordPress..."
     try {
         $wordpressUrl = "https://wordpress.org/latest.zip"
         $zipPath = "C:\temp\wordpress.zip"
         $extractPath = "C:\xampp\htdocs"
 
-        # Create C:\temp if it doesn't exist (redundant check but safe)
         if (-not (Test-Path "C:\temp")) {
             New-Item -ItemType Directory -Path "C:\temp" | Out-Null
             Write-Host "Created C:\temp directory."
         }
 
-        # Download the WordPress ZIP file
         Write-Host "Downloading WordPress from $wordpressUrl..."
         Invoke-WebRequest -Uri $wordpressUrl -OutFile $zipPath
 
-        # Create htdocs directory if it doesn't exist
         if (-not (Test-Path $extractPath)) {
             New-Item -ItemType Directory -Path $extractPath | Out-Null
             Write-Host "Created $extractPath directory."
         }
 
-        # Extract the ZIP file to htdocs
         Write-Host "Extracting WordPress to $extractPath..."
         Add-Type -AssemblyName System.IO.Compression.FileSystem
         [System.IO.Compression.ZipFile]::ExtractToDirectory($zipPath, $extractPath)
 
-        # Clean up the ZIP file
         Remove-Item -Path $zipPath -Force
         Write-Host "WordPress has been extracted to $extractPath. Please proceed with manual installation via http://localhost after starting XAMPP."
     } catch {

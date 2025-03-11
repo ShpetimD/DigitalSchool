@@ -1,4 +1,4 @@
-![Alt text](image-url "Optional title")  
+!(image-url "Optional title")  
 <img src="https://github.com/ShpetimD/DigitalSchool/blob/main/DS_Logo.png" width="500" height="150">
 
 Run the script in Powershell:

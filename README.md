@@ -1,5 +1,4 @@
-!(image-url "Optional title")  
-<img src="https://github.com/ShpetimD/DigitalSchool/blob/main/DS_Logo.png" width="500" height="150">
+!<img src="https://github.com/ShpetimD/DigitalSchool/blob/main/DS_Logo.png" width="500" height="150">
 
 Run the script in Powershell:
 - For Student PC

@@ -1,5 +1,5 @@
 ![Alt text](image-url "Optional title")  
-<img src="https://github.com/ShpetimD/DigitalSchool/blob/main/DS_Logo.png" width="100" height="1000">
+<img src="https://github.com/ShpetimD/DigitalSchool/blob/main/DS_Logo.png" width="500" height="100">
 
 
 This script will install the following applications

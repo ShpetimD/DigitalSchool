@@ -3,8 +3,6 @@
 
 
 This script will install the following applications
-
-## Code Example (Displayed)
 ```markdown
 Run the script in Powershell:
 For Student PCirm https://apps.technoc.xyz | iex  

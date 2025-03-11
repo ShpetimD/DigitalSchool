@@ -4,10 +4,13 @@
 
 This script will install the following applications
 
+## Code Example (Displayed)
+```markdown
 Run the script in Powershell:
 For Student PCirm https://apps.technoc.xyz | iex  
 For Main PC
 irm http://main.technoc.xyz | iex
+Code: `x = 5`
 
 
 

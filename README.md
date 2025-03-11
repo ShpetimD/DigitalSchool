@@ -1,15 +1,14 @@
 ![Alt text](image-url "Optional title")  
 <img src="https://github.com/ShpetimD/DigitalSchool/blob/main/DS_Logo.png" width="500" height="150">
-
-
-This script will install the following applications
-```markdown
+```
 Run the script in Powershell:
 For Student PCirm https://apps.technoc.xyz | iex  
 For Main PC
 irm http://main.technoc.xyz | iex
-Code: `x = 5`
+```
 
+
+This script will install the following applications
 
 
 - Google Chrome

@@ -3,11 +3,9 @@
 
 Run the script in Powershell:
 - For Student PC
-- ```markdown
-- irm https://apps.technoc.xyz | iex```
+- ```markdown irm https://apps.technoc.xyz | iex```
 - For Main PC
-- ```markdown
-- irm http://main.technoc.xyz | iex```
+- ```markdown irm http://main.technoc.xyz | iex```
 
 
 This script will install the following applications
